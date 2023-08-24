@@ -5,6 +5,8 @@
         <meta charset="UTF-8" />
         <meta name="description" content="coding challenge assignment">
         <link rel="stylesheet" href="index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
     </head>
     <body>
         <article>
@@ -19,27 +21,58 @@
             <section>
                 <h2>Change Buttons</h2>
                 <ul id="list2">
-                    <li><button>Change Box 1</button></li>
-                    <li><button>Change Box 2</button></li>
-                    <li><button>Change Box 3</button></li>
-                    <li><button>Change All</button></li>
+                    <li><button id="change1" onclick="changeOne()">Change Box 1</button></li>
+                    <li><button id="change2" onclick="changeTwo()">Change Box 2</button></li>
+                    <li><button id="change3" onclick="changeThree()">Change Box 3</button></li>
+                    <li><button id="changeAll" onclick="changeAll()">Change All</button></li>
                 </ul>
             </section>
             <section>
                 <h3>Hide Buttons</h3>
                 <ul id="list3">
-                    <li><button>Hide Box 1</button></li>
-                    <li><button>Hide Box 2</button></li>
-                    <li><button>Hide Box 3</button></li>
-                    <li><button>Hide All</button></li>
+                    <li><button id="hide1">Hide Box 1</button></li>
+                    <li><button id="hide2">Hide Box 2</button></li>
+                    <li><button id="hide3">Hide Box 3</button></li>
+                    <li><button id="hideAll">Hide All</button></li>
                 </ul>
             </section>
             <section>
                 <ul id="list4">
-                    <li><button>Reset Colors</button></li>
-                    <li><button>Show All</button></li>
+                    <li><button onclick="resetAll()">Reset Colors</button></li>
+                    <li><button id="showAll">Show All</button></li>
                 </ul>
             </section>
         </article>
+        <script>
+            $(document).ready(function() {
+                $("#hide1").click(function(){
+                    $("#box1").css('visibility','hidden')
+                });
+                $("#hide2").click(function(){
+                    $("#box2").css('visibility','hidden')
+                });
+                $("#hide3").click(function(){
+                    $("#box3").css('visibility','hidden')
+                });
+                $("#hideAll").click(function(){
+                    $("#box1").css('visibility','hidden')
+                    $("#box2").css('visibility','hidden')
+                    $("#box3").css('visibility','hidden')
+                });
+                $("#showAll").click(function(){
+                    $("#box1").css('visibility','visible')
+                    $("#box2").css('visibility','visible')
+                    $("#box3").css('visibility','visible')
+                });
+                $("#resetColors").click(function(){
+                    $("#box1").css('background-color','#dc2626')
+                    $("#box1").css('border-color','#09090b')
+                    $("#box2").css('background-color','#4338ca')
+                    $("#box2").css('border-color','#fde047')
+                    $("#box3").css('background-color','#bef264')
+                    $("#box3").css('border-color','#e879f9')
+                });
+            });
+        </script>
     </body>
 </html>
